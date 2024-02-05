@@ -1,3 +1,3 @@
-pip install -r requirements.txt
-brew install tesseract
-cd ~/../../opt/homebrew/share/tessdata && curl -LJO https://github.com/tesseract-ocr/tessdata/raw/4.00/deu.traineddata
+- pip install -r requirements.txt
+- brew install tesseract
+- cd ~/../../opt/homebrew/share/tessdata && curl -LJO https://github.com/tesseract-ocr/tessdata/raw/4.00/deu.traineddata
