@@ -4,6 +4,7 @@ import datetime
 import dateutil.parser
 from difflib import get_close_matches
 
+
 class Receipt(object):
     def __init__(self, config, filename, raw):
         """
@@ -20,7 +21,7 @@ class Receipt(object):
         self.date = None
         self.postal = None
         self.sum = None
-        self.lines = [l.lower() for l in raw.split('\n') if l.strip()]
+        self.lines = [l.lower() for l in raw.split("\n") if l.strip()]
         self.parse()
 
     @classmethod
@@ -34,11 +35,11 @@ class Receipt(object):
 
     def for_format_string(self):
         return {
-            'filename': self.filename,
-            'company': self.company or 'unknown',
-            'date': self.date or datetime.date(1970, 1, 1),
-            'postal': self.postal or 'unknown',
-            'sum': '?' if self.sum is None else self.sum,
+            "filename": self.filename,
+            "company": self.company or "unknown",
+            "date": self.date or datetime.date(1970, 1, 1),
+            "postal": self.postal or "unknown",
+            "sum": "?" if self.sum is None else self.sum,
         }
 
     def is_complete(self):
@@ -72,7 +73,7 @@ class Receipt(object):
         """
         for line in self.lines:
             words = line.split()
-            if re.search(r'\b'+keyword+r'\b', line, re.I):
+            if re.search(r"\b" + keyword + r"\b", line, re.I):
                 return line
 
             matches = get_close_matches(keyword, words, 1, accuracy)
@@ -88,7 +89,7 @@ class Receipt(object):
         for line in self.lines:
             match = re.search(self.config.formats.date, line, re.I)
             if match:
-                date_str = match.group(1).replace(' ', '')
+                date_str = match.group(1).replace(" ", "")
                 try:
                     return dateutil.parser.parse(date_str)
                 except:
@@ -114,7 +115,7 @@ class Receipt(object):
         """
 
         for int_accuracy in range(10, 6, -1):
-            accuracy = int_accuracy/10.0
+            accuracy = int_accuracy / 10.0
             for company, spellings in self.config.companys.items():
                 for spelling in spellings:
                     line = self.fuzzy_find(spelling, accuracy)
