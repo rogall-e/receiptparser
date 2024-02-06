@@ -2,9 +2,6 @@
 name = "receiptparser"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Eike Rogall", email = "eike.rogall@gmail.com"},
-]
 dependencies = [
     "Pillow",
     "pytesseract",
@@ -14,7 +11,7 @@ dependencies = [
 ]
 requires-python = ">=3.11"
 readme = "README.md"
-license = {text = "MIT"}
+
 
 [build-system]
 requires = ["setuptools>=61", "wheel"]
