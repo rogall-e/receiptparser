@@ -1,10 +1,5 @@
 # receiptparser
 
-[![Build Status](https://travis-ci.org/knipknap/receiptparser.svg?branch=master)](https://travis-ci.org/knipknap/receiptparser)
-[![Coverage Status](https://coveralls.io/repos/github/knipknap/receiptparser/badge.svg?branch=master)](https://coveralls.io/github/knipknap/receiptparser?branch=master)
-[![Code Climate](https://lima.codeclimate.com/github/knipknap/receiptparser/badges/gpa.svg)](https://lima.codeclimate.com/github/knipknap/receiptparser)
-[![Documentation Status](https://readthedocs.org/projects/receiptparser/badge/?version=latest)](http://receiptparser.readthedocs.io/en/latest/?badge=latest)
-
 ## Summary
 
 A receipt and bill parser written in Python.
@@ -43,23 +38,18 @@ which raises the recognition rate around 6% but doubles the scan time.
 ### Prerequisites
 
 - Python 3
-- PIP3
 - tesseract
 
-### Install via PIP
-
-
-```bash
-pip3 install receiptparser
-```
 
 ### Install via Git
 
-```bash
-pip3 install -r requirements.txt
-pip3 install .
-```
+Clone the repository and install the package:
 
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
 ## Python usage
 
